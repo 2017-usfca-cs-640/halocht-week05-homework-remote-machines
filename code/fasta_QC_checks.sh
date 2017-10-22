@@ -23,6 +23,35 @@ echo "Looking at files"
 
 for $file in "$@"
 do
-	echo "Output for ($filename)"
+	echo "Output for $file"
 
-	echo "Size:"; du -h $file 
+	echo "Size:"
+
+	du -h $file
+
+	echo ___________________
+
+	echo "First three lines:"
+
+	head -3 $file
+
+	echo __________________
+
+	echo "Last three lines:"
+
+	tail -3 $file
+
+	echo _________________
+
+	echo "Number of sequences:"
+
+	grep -c "^>" $file
+
+	echo "Sequence Names:"
+
+	sort $file
+
+	echo ##############################
+
+done
+
